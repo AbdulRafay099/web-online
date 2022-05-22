@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main</title>
+        <link rel="stylesheet" href="stylesfile.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <form class = "form  form--hidden" id="login">
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkCreateAccount">Create Profile</a>
+                </p>
+            </form>
+
+            <form class = "form" id="createAccount">
+                <h1 class = "form__title">Create Profile</h1>
+                <div class = "form__message  form__message--error"></div>
+
+                <div class = "form__input-group">
+                    <input type = "text" id = "firstName"class = "form__input" autofocus placeholder = "First Name">
+                    <div class = "form__input-error-message"></div>
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Middle Name (Optional)">
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" id = "signupUsername" class = "form__input" autofocus placeholder = "Last Name">
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Date of Birth (DD/MM/YYYY)">
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Phone No. (03xx-xxxxxxx)">
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "email" class = "form__input" autofocus placeholder = "Email Address (example@mail.com)">
+                    <div class = "form__input-error-message"></div>
+                </div>
+
+                <button class = "form__button" type = "submit" onclick="displayProfile()" id = "linkProfilePhoto">Continue</button>                
+
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkLogin"></a>
+                </p>
+            </form>
+            
+            <form class = "form form--hidden" id="profilePhoto">
+                <h1 class = "form__title">Add a Profile Photo</h1>
+                <div class = "form__message  form__message--error"></div>
+                
+                <input type = "file" name = "inpFile" id = "inpFile">
+                <div class = "image-preview" id = "imagePreview">
+                    <img src = "" alt="Image Preview" class= "image-preview__image">
+                    <span class="image-preview__default-text">Add a Profile Picture</span>
+                </div>
+                <br><br>
+                <button class = "form__button" type = "submit" id = "linkEducationInfo">Continue</button>
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkBackCreateAccount">back</a>
+                </p>
+            </form>
+            
+            <form class = "form form--hidden" id="educationInfo">
+                <h1 class = "form__title">Educational Information</h1>
+
+                <div class = "form__message  form__message--error"></div>
+                <div class = "form__input-group">
+                    <input type = "text" id = "signupUsername"class = "form__input" autofocus placeholder = "Degree">
+                    <div class = "form__input-error-message"></div>
+                </div>
+                
+                <div class = "form__input-group">
+                    <input list="Institutes" name="a" id="a" class = "form__input" autofocus placeholder = "Institute">
+                    <datalist id="Institutes">
+                        <option value="National University of Sciences and Technology">
+                        <option value="National University of Computer and Emerging Sciences">
+                        <option value="Lahore University of Management Sciences">
+                        <option value="International Islamic University, Islamabad">
+                        <option value="Aga Khan University">
+                        <option value="University of Engineering and Technology, Lahore">
+                        <option value="COMSATS Institute of Information Technology">
+                        <option value="University of the Punjab">
+                        <option value="University of Agriculture, Faisalabad">
+                        <option value="The University of Lahore">
+                        <option value="Institute of Business Administration">
+                        <option value="University of Management and Technology">
+                        <option value="Pakistan Institute of Development Economics">
+                        <option value="Bahauddin Zakariya University">
+                        <option value="Quaid-i-Azam University">
+                    </datalist>
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Year of graduation (e.g. 2020)">
+                    <div class = "form__input-error-message"></div>
+                </div>
+
+                <button class = "form__button" type = "submit">Add Degree</button><br><br>
+                <button class = "form__button" type = "submit" id = "linkProfessionalInfo">Continue</button>
+
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkBackProfilePhoto">back</a>
+                </p>
+            </form>
+
+            <form class = "form form--hidden" id="professionalInfo">
+                <h1 class = "form__title">Professional Information</h1>
+
+                <div class = "form__message  form__message--error"></div>
+                <div class = "form__input-group">
+                    <input type = "text" id = "signupUsername"class = "form__input" autofocus placeholder = "Institute Name">
+                    <div class = "form__input-error-message"></div>
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Position">
+                    <div class = "form__input-error-message"></div>
+                </div>
+
+                <div class = "form__input-group">
+                    <input type = "text" class = "form__input" autofocus placeholder = "Time Period (e.g. 1999-2020)">
+                    <div class = "form__input-error-message"></div>
+                </div>
+                
+                <button class = "form__button" type = "submit">Add Experience</button><br><br>
+                <button class = "form__button" type = "submit" id = "linkAboutYourself">Continue</button>
+
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkBackEducationInfo">back</a>
+                </p>
+            </form>
+
+            <form class = "form form--hidden" id="aboutYourself">
+                <h1 class = "form__title">Almost there,</h1>
+
+                <div class = "form__message form__message--error"></div>
+                <div class = "form__input-group">
+                   <textarea id="w3review" class = "form__input" name="w3review" rows="8" cols="50" autofocus placeholder = "About Yourself (optional)"></textarea>
+                </div>
+                
+                <button class = "form__button"  onclick="displayProfile()" type = "submit" id = "linkPreviewSite">Go to Preview</button>
+
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkBackProfessionalInfo">back</a>
+                </p>
+            </form>
+
+            <form class = "form form--hidden" id="previewSite">
+                <h1 class = "form__title">Your Website looks like</h1>
+
+                <div class = "form__message form__message--error"></div>
+                <p id="demo"></p>
+
+                <p class = "form__text">
+                    <a class = "form__link" href = "./" id = "linkBackAboutYourself">back</a>
+                </p>
+            </form>
+        </div>
+        <script src = "main.js"></script>
+    </body>
+</html>
